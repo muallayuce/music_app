@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Music App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'musics/static.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="user-controls">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="user-profile">
+          <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
+          <span>{{ user.username }}</span>
+        </div>
+        <button id="my-music">My Music</button>
+        <button id="my-profile">Profile</button>
+        <button id="logout-button">Logout</button>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer>&copy; {{ year }} My Music App</footer>
+  </body>
+</html>
+
+<script>
+  document
+    .getElementById("logout-button")
+    .addEventListener("click", function () {
+      window.location.href = "{% url 'music:welcome' %}";
+    });
+</script>
+
+<script>
+  document.getElementById("my-profile").addEventListener("click", function () {
+    window.location.href = "{% url 'music:profile' %}";
+  });
+</script>
+
+<script>
+  document.getElementById("my-music").addEventListener("click", function () {
+    window.location.href = "{% url 'music:mymusic' %}";
+  });
+</script>

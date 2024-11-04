@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1>Welcome to My Music App</h1>
+
+<div class="featured-playlists">
+  <h2>Featured Playlists</h2>
+  <div class="playlist">
+    <img src="{% static 'images/playlist1.jpg' %}" alt="Playlist 1" />
+    <h3>Playlist 1</h3>
+    <p>Curated by: John Doe</p>
+  </div>
+
+  <div class="playlist">
+    <img src="{% static 'images/playlist2.jpg' %}" alt="Playlist 2" />
+    <h3>Playlist 2</h3>
+    <p>Curated by: Jane Smith</p>
+  </div>
+
+  <!-- Add more featured playlists here -->
+</div>
+
+<div class="recommended-tracks">
+  <h2>Recommended Tracks</h2>
+  <ul>
+    <li>Song 1 - Artist 1</li>
+    <li>Song 2 - Artist 2</li>
+    <li>Song 3 - Artist 3</li>
+    <!-- Add more recommended tracks here -->
+  </ul>
+</div>
+{% endblock %}

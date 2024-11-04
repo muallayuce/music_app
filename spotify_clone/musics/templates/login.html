@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Music App{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'musics/static.css' %}" />
+  </head>
+  <body>
+    <header>
+      <div class="user-controls">
+        <div></div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="login-input">Name</h1>
+      <input type="text" name="your_name" />
+      <h1 class="login-input">Surname</h1>
+      <input type="text" name="your_surname" />
+      <h1 class="login-input">E-mail</h1>
+      <input type="text" name="your_email" />
+      <h1 class="login-input">Username</h1>
+      <input type="text" name="your_username" />
+      <h1 class="login-input">Password</h1>
+      <input type="text" name="your_password" />
+      <button id="log-in">Log-in</button>
+    </main>
+
+    <footer>&copy; {{ year }} My Music App</footer>
+  </body>
+</html>
+
+<script>
+  document.getElementById("log-in").addEventListener("click", function () {
+    window.location.href = "{% url 'music:home' %}";
+  });
+</script>
