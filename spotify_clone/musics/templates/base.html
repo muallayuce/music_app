@@ -24,34 +24,13 @@
           <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
           <span>{{ user.username }}</span>
         </div>
-        <button id="my-music">My Music</button>
-        <button id="my-profile">Profile</button>
-        <button id="logout-button">Logout</button>
       </div>
     </header>
 
     <main>{% block content %}{% endblock %}</main>
 
     <footer>&copy; {{ year }} My Music App</footer>
+
+    {% block extra_js %}{% endblock %}
   </body>
 </html>
-
-<script>
-  document
-    .getElementById("logout-button")
-    .addEventListener("click", function () {
-      window.location.href = "{% url 'music:welcome' %}";
-    });
-</script>
-
-<script>
-  document.getElementById("my-profile").addEventListener("click", function () {
-    window.location.href = "{% url 'music:profile' %}";
-  });
-</script>
-
-<script>
-  document.getElementById("my-music").addEventListener("click", function () {
-    window.location.href = "{% url 'music:mymusic' %}";
-  });
-</script>

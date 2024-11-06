@@ -1,43 +1,24 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}My Music App{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'musics/static.css' %}" />
-  </head>
-  <body>
-    <header>
-      <div class="user-controls">
-        <div></div>
-      </div>
-    </header>
+<div>
+  <button id="back-to-home" data-url="{% url 'music:home' %}">
+    Back to Home
+  </button>
+</div>
+<div>
+  <h1>Profile Picture</h1>
+  <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
+  <h1>Name</h1>
 
-    <main>
-      <h1>Profile Picture</h1>
-      <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
-      <h1>Name</h1>
+  <h1>Surname</h1>
 
-      <h1>Surname</h1>
+  <h1>E-mail</h1>
 
-      <h1>E-mail</h1>
+  <h1>Username</h1>
 
-      <h1>Username</h1>
+  <h1>Password</h1>
+</div>
 
-      <h1>Password</h1>
-      <button id="back-to-home">Back to Home</button>
-    </main>
-
-    <footer>&copy; {{ year }} My Music App</footer>
-  </body>
-</html>
-
-<script>
-  document
-    .getElementById("back-to-home")
-    .addEventListener("click", function () {
-      window.location.href = "{% url 'music:home' %}";
-    });
-</script>
+{% endblock %} {% block extra_js %}
+<script src="{% static 'musics/app.js' %}"></script>
+{% endblock %}
