@@ -29,5 +29,16 @@
 </div>
 
 {% endblock %} {% block extra_js %}
-<script src="{% static 'musics/app.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backButton = document.getElementById("back-to-home");
+    if (backButton) {
+      backButton.addEventListener("click", function () {
+        window.location.href = this.getAttribute("data-url");
+      });
+    } else {
+      console.error("Button with id 'back-to-home' not found.");
+    }
+  });
+</script>
 {% endblock %}

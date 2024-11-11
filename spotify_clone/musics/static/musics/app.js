@@ -11,9 +11,5 @@ document.getElementById("my-music").addEventListener("click", function () {
   });
   
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("back-to-home").addEventListener("click", function () {
-      window.location.href = this.getAttribute("data-url");
-    });
-  });
-  
+
+
