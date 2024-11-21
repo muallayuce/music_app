@@ -1,18 +1,27 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 
 <div>
+  <h1>Profile Picture</h1>
+  <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
+  <button>Change</button>
+  <h1>Name</h1>
+  <input placeholder="Name" />
+  <h1>Surname</h1>
+  <input placeholder="Surname" />
+  <h1>E-mail</h1>
+  <input placeholder="E-mail" />
+  <h1>Username</h1>
+  <input placeholder="Username" />
+  <h1>Password</h1>
+  <input placeholder="Old Password" />
+  <input placeholder="New Password" />
+</div>
+
+<div>
   <button id="back-to-home" data-url="{% url 'music:home' %}">
     Back to Home
   </button>
-</div>
-<div>
-  <h1>Profile Picture</h1>
-  <img src="{% static 'images/user-avatar.jpg' %}" alt="User Avatar" />
-  <h1>Name</h1>
-  <h1>Surname</h1>
-  <h1>E-mail</h1>
-  <h1>Username</h1>
-  <h1>Password</h1>
+  <button>Save</button>
 </div>
 
 {% endblock %} {% block extra_js %}

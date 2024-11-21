@@ -14,7 +14,11 @@
       <button id="login-button">Log In</button>
     </header>
 
-    <main class="welcome-main">{% block content %}LISTEN!{% endblock %}</main>
+    <main class="welcome-main">
+      {% block content %} LISTEN!
+      <img src="{% static 'images/playlist2.jpg' %}" alt="Playlist 2" />
+      {% endblock %}
+    </main>
 
     <footer class="welcome-footer">
       &copy; {{ year|default:2024 }} My Music App
